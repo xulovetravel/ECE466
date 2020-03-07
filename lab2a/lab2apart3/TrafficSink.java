@@ -18,14 +18,14 @@ public class TrafficSink {
     
     //set port to the same as the traffic generator
     try {
-        //port number: 4444
-        System.out.println(4444);    
-        DatagramSocket socket = new DatagramSocket(4444);
-        byte[] buf = new byte[512];
+        //port number: 4445
+        System.out.println(4445);    
+        DatagramSocket socket = new DatagramSocket(4445);
+        byte[] buf = new byte[65507];
         DatagramPacket packet = new DatagramPacket(buf, buf.length);
         System.out.println("Waiting to connect..."); 
                 
-        FileOutputStream fout =  new FileOutputStream("TrafficSinkOutput.txt");
+        FileOutputStream fout =  new FileOutputStream("TrafficSinkOutputPoisson.txt");
 	    pout = new PrintStream (fout);
 			
 	    int SeqNo = 1;
@@ -56,3 +56,4 @@ public class TrafficSink {
     }
   }
 }
+

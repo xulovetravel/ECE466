@@ -1,7 +1,7 @@
 [packet_no_p, time_p, packetsize_p] = textread('poisson3.data', '%f %f %f');
 
-%PLOT1
-figure(1);
+%PLOT2, used 30000 datas as inputs.
+figure(2);
 
 times1 = zeros(1,30000);
 arrivals1 = zeros(1,30000);
@@ -32,7 +32,6 @@ while i<=30000
     i=i+1;
 end
 
-%subplot(2,1,2);
 plot(times1,arrivals1, 'b', times2, arrival2, 'g');
 title('Traffic Sink (TrafficSinkOutput.txt)');
 xlabel('time (in microseconds)');

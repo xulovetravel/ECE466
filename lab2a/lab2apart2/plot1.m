@@ -1,6 +1,6 @@
 [packet_no_p, time_p, packetsize_p] = textread('poisson3.data', '%f %f %f');
 
-%PLOT1
+%plot1, used 30000 data points as input. 
 figure(1);
 
 times1 = zeros(1,30000);

@@ -12,20 +12,18 @@ import java.net.*;
  * values are  displayed, and then written to a file with name "output.txt"  
  */
 
-public class TrafficSink {
+public class TrafficSink_3 {
   public static void main(String[] args){
     PrintStream pout = null;
-    
     //set port to the same as the traffic generator
     try {
-        //port number: 4444
-        System.out.println(4444);    
-        DatagramSocket socket = new DatagramSocket(4444);
-        byte[] buf = new byte[512];
+        System.out.println(4445);    
+        DatagramSocket socket = new DatagramSocket(4445);
+        byte[] buf = new byte[65507];
         DatagramPacket packet = new DatagramPacket(buf, buf.length);
         System.out.println("Waiting to connect..."); 
                 
-        FileOutputStream fout =  new FileOutputStream("TrafficSinkOutput.txt");
+        FileOutputStream fout =  new FileOutputStream("TrafficSinkOutputVideo3.txt");
 	    pout = new PrintStream (fout);
 			
 	    int SeqNo = 1;
@@ -47,12 +45,13 @@ public class TrafficSink {
             pout.println(SeqNo+ "\t"+  packet.getLength() + "\t" + recordedTime / 1000); 
             SeqNo++;
         }
-    }
-    catch (IOException e) {
+      }
+       catch (IOException e) {
            System.out.println("IOException: " + e.getMessage());  
-    }
-    finally {
+       }
+       finally {
             pout.close();
-    }
+       }
   }
 }
+
