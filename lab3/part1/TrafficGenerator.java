@@ -24,7 +24,8 @@ class TrafficGenerator {
         String hostname = "localhost";
         ArrayList<DatagramPacket> frames = new ArrayList<DatagramPacket>();
         long[] waitTime = new long[125000]; 
-        int port = 4445;
+		int port = 4445;
+		int rate = Integer.parseInt(args[0]);
 		try {  
 			
 			/*
